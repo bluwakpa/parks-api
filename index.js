@@ -1,8 +1,8 @@
 'use strict';
 
 // put your own value below!
-const apiKey = ''; 
-const searchURL = 'https://www.googleapis.com/youtube/v3/search';
+const apiKey = '6mnOgfhtjsSq6hr1eLObjDVnQzGVH10CbhPcGHL3'; 
+const searchURL = 'https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=6mnOgfhtjsSq6hr1eLObjDVnQzGVH10CbhPcGHL3';
 
 
 function formatQueryParams(params) {
@@ -31,7 +31,7 @@ function displayResults(responseJson) {
   $('#results').removeClass('hidden');
 };
 
-function getYouTubeVideos(query, maxResults=10) {
+function getNationalParks(query, maxResults=10) {
   const params = {
     key: apiKey,
     q: query,
@@ -62,7 +62,7 @@ function watchForm() {
     event.preventDefault();
     const searchTerm = $('#js-search-term').val();
     const maxResults = $('#js-max-results').val();
-    getYouTubeVideos(searchTerm, maxResults);
+    getNationalParks(searchTerm, maxResults);
   });
 }
 
